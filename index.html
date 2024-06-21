@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page da ColorArt</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #4A90E2;
+            color: #FFFFFF;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .hero {
+            background-color: #7ED321;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 50px 0;
+        }
+        .hero h2 {
+            font-size: 3em;
+            margin: 10px 0;
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .hero button {
+            background-color: #D0021B;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .hero button:hover {
+            background-color: #9A0013;
+        }
+        .about {
+            background-color: #FFFFFF;
+            color: #4A4A4A;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .about p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .services {
+            background-color: #4A4A4A;
+            color: #FFFFFF;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .services h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        .services .service {
+            margin-bottom: 30px;
+        }
+        .services .service img {
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #4A90E2;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        .testimonials {
+            background-color: #FFFFFF;
+            color: #4A4A4A;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .testimonials h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        .testimonials .quote {
+            font-style: italic;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .popup-content {
+            background-color: #FFFFFF;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+        }
+        .popup h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .popup form {
+            text-align: left;
+        }
+        .popup input,
+        .popup textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #4A90E2;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .popup button {
+            background-color: #D0021B;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .popup button:hover {
+            background-color: #9A0013;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 1.5em;
+            color: #4A4A4A;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .hero h2 {
+                font-size: 2em;
+            }
+            .hero p {
+                font-size: 1.2em;
+            }
+            .services h2 {
+                font-size: 2em;
+            }
+            .services .service img {
+                max-width: 80%;
+            }
+            .testimonials h2 {
+                font-size: 2em;
+            }
+            .popup-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ColorArt</h1>
+            <nav>
+                <a href="#">Serviços</a>
+                <a href="#">Portfólio</a>
+                <a href="#">Depoimentos</a>
+                <a href="#" onclick="openPopup()">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Transforme seus espaços com a ColorArt</h2>
+            <p>Pintura residencial e comercial de alta qualidade</p>
+            <button onclick="openPopup()">Solicite um Orçamento Gratuito</button>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <p>Breve introdução sobre a ColorArt, destacando a expertise em pintura residencial e comercial. Incluir uma foto da equipe ou do fundador.</p>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
+            <div class="service">
+                <img src="pintura-residencial.jpg" alt="Pintura Residencial">
+                <h3>Pintura Residencial</h3>
+                <p>Descrição do serviço de pintura residencial.</p>
+            </div>
+            <div class="service">
+                <img src="pintura-comercial.jpg" alt="Pintura Comercial">
+                <h3>Pintura Comercial</h3>
+                <p>Descrição do serviço de pintura comercial.</p>
+            </div>
+            <div class="service">
+                <img src="pintura-decorativa.jpg" alt="Pintura Decorativa">
+                <h3>Pintura Decorativa</h3>
+                <p>Descrição do serviço de pintura decorativa.</p>
+            </div>
+            <div class="service">
+                <img src="reparos-manutencao.jpg" alt="Reparos e Manutenção">
+                <h3>Reparos e Manutenção</h3>
+                <p>Descrição do serviço de reparos e manutenção.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>Depoimentos de Clientes</h2>
+            <div class="quote">
+                <p>"Com a ColorArt, transformei meu escritório em um ambiente vibrante e profissional. Excelente serviço!"</p>
+                <p><strong>Maria Silva</strong></p>
+            </div>
+            <div class="quote">
+                <p>"Equipe dedicada e resultados incríveis. Recomendo a ColorArt para qualquer projeto de pintura!"</p>
+                <p><strong>João Oliveira</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup de Contato -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Entre em Contato</h2>
+            <form action="#">
+                <input type="text" name="name" placeholder="Seu Nome" required>
+                <br>
+                <input type="email" name="email" placeholder="Seu E-mail" required>
+                <br>
+                <input type="tel" name="phone" placeholder="Seu Telefone">
+                <br>
+                <textarea name="message" placeholder="Sua Mensagem" rows="4" required></textarea>
+                <br>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <nav>
+                <a href="#">Serviços</a>
+                <a href="#">Portfólio</a>
+                <a href="#" onclick="openPopup()">Contato</a>
+            </nav>
+            <div class="social-icons">
+                <a href="#"><img src="instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            </div>
+            <p>&copy; 2024 ColorArt. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript para controlar o popup -->
+    <script>
+        function openPopup() {
+            document.getElementById("popup").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
